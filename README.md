@@ -1,5 +1,6 @@
 #
 
+![](diagram/diagram.png)
 ##
 
 ###
