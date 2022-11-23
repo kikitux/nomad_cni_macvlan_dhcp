@@ -1,0 +1,20 @@
+{
+  "cniVersion": "1.0.0",
+  "name": "mynet",
+  "plugins": [
+    {
+      "type": "macvlan",
+      "master": "enp0s8",
+      "ipam": {
+        "type": "dhcp"
+      }
+    },
+    {
+      "type": "portmap",
+      "capabilities": {
+        "portMappings": true
+      },
+      "snat": true
+    }
+  ]
+}
