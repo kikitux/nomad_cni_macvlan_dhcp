@@ -1,26 +1,42 @@
 #
 
 ![](diagram/diagram.png)
-##
+## pre-requirement
 
-###
+- virtualbox 7.0 or latest
+- vagrant 2.3.3 or latest
+
+tested on MACOX Intel
+
+### How to use
+
+- clone
 
 ```
-nmap --script broadcast-dhcp-discover -e enp0s8
+git clone https://github.com/kikitux/nomad_cni_macvlan_dhcp.git
 ```
 
-###
+- change directory
 
 ```
-ifconfig enp0s9 down
+cd nomad_cni_macvlan_dhcp
 ```
 
-###
+- create vms
+
+```
+vagrant up
+```
+
+### run nomad job
 
 ```
 vagrant ssh client2
 cd /vagrant
+nomad job run nomad/sample_cni_macvlan_dhcp.hcl 
 ```
+
+Sample output
 
 ```
 vagrant@client1:/vagrant$ nomad job run nomad/sample_cni_macvlan_dhcp.hcl 
